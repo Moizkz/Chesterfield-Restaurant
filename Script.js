@@ -1,18 +1,18 @@
 const menuData=[
-{id:1,name:"Dry-Aged Ribeye",price:32,cat:"Mains",img:"https://images.unsplash.com/photo-1546964053-d93311cf64e4?w=400"},
-{id:2,name:"Pan-Seared Sea Bass",price:26,cat:"Mains",img:"https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400"},
-{id:3,name:"Classic Fish & Chips",price:18,cat:"Mains",img:"https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400"},
-{id:4,name:"Buratta & Heritage Tomato",price:12,cat:"Starters",img:"https://images.unsplash.com/photo-1548340740-b4d0aa3cdd0a?w=400"},
-{id:5,name:"Chocolate Fondant",price:9,cat:"Desserts",img:"https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400"},
-{id:6,name:"Chesterfield Wine Selection",price:45,cat:"Wine",img:"https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400"},
+{id:1,name:"Dry-Aged Ribeye",price:32,cat:"Mains",img:"images/menu1.jpg"},
+{id:2,name:"Pan-Seared Sea Bass",price:26,cat:"Mains",img:"images/menu2.jpg"},
+{id:3,name:"Classic Fish & Chips",price:18,cat:"Mains",img:"images/menu3.jpg"},
+{id:4,name:"Buratta & Heritage Tomato",price:12,cat:"Starters",img:"images/menu4.jpg"},
+{id:5,name:"Chocolate Fondant",price:9,cat:"Desserts",img:"images/menu5.jpg"},
+{id:6,name:"Chesterfield Wine Selection",price:45,cat:"Wine",img:"images/menu6.jpg"},
 ];
 const galleryData=[
-"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600",
-"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600",
-"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600",
-"https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600",
-"https://images.unsplash.com/photo-1515669097368-22e68427d265?w=600",
-"https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600"
+"images/gal1.jpg",
+"images/gal2.jpg",
+"images/gal3.jpg",
+"images/gal4.jpg",
+"images/gal5.jpg",
+"images/gal6.jpg"
 ];
 let bookings=JSON.parse(localStorage.getItem('chester_bookings'))||[];
 
