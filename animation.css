@@ -1,0 +1,57 @@
+/* THE CHESTERFIELD - Animations - Link with HTML */
+html{scroll-behavior:smooth}
+
+/* Hero entrance */
+.hero-text h4{animation:fadeDown 0.8s ease-out}
+.hero-text h1{animation:fadeUp 1s ease-out 0.2s both}
+.hero-text p{animation:fadeUp 1s ease-out 0.4s both}
+.hero-text .btn-gold, .hero-text .btn-outline{animation:fadeUp 1s ease-out 0.6s both}
+.hero-icons{animation:fadeUp 1s ease-out 0.8s both}
+.hero-img{animation:zoomIn 1.2s ease-out 0.3s both; overflow:hidden}
+.hero-img img{transition:transform 8s ease}
+.hero-img:hover img{transform:scale(1.08)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes zoomIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+
+/* Scroll reveal - add class .reveal to any section */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.2,0.8,0.2,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:all 0.8s ease}
+.reveal-left.active{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:all 0.8s ease}
+.reveal-right.active{opacity:1;transform:translateX(0)}
+
+/* Menu cards stagger animation */
+.prod{opacity:0;transform:translateY(20px);animation:cardIn 0.6s ease forwards}
+.prod:nth-child(1){animation-delay:0.1s}.prod:nth-child(2){animation-delay:0.2s}.prod:nth-child(3){animation-delay:0.3s}
+.prod:nth-child(4){animation-delay:0.4s}.prod:nth-child(5){animation-delay:0.5s}.prod:nth-child(6){animation-delay:0.6s}
+@keyframes cardIn{to{opacity:1;transform:translateY(0)}}
+
+/* Gold button shimmer */
+.btn-gold{position:relative;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:0.5s}
+.btn-gold:hover::before{left:100%}
+
+/* Gallery hover + lightbox zoom */
+.gallery img{transition:transform 0.4s ease, filter 0.4s ease}
+.gallery img:hover{transform:scale(1.05);filter:brightness(1.15)}
+
+/* Navbar scroll effect */
+header.scrolled{background:rgba(10,10,10,.98)!important;box-shadow:0 4px 20px rgba(0,0,0,.5);padding:12px 4%!important;transition:all 0.3s ease}
+
+/* Floating gold line */
+.sub{position:relative}
+.sub::after{content:'';display:block;width:0;height:1px;background:var(--gold);margin:8px auto 0;transition:width 0.8s ease}
+.reveal.active .sub::after{width:60px}
+
+/* Input focus animation */
+.form-box input:focus, .form-box textarea:focus, .form-box select:focus{border-color:var(--gold)!important;box-shadow:0 0 0 2px rgba(212,183,143,.15);outline:none;transition:all 0.3s ease}
+
+/* Parallax for hero */
+.parallax{transform:translateY(var(--parallax-y,0));will-change:transform}
+
+/* Toast slide */
+.toast.show{animation:toastSlide 0.4s ease}
+@keyframes toastSlide{from{transform:translateX(-50%) translateY(20px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}

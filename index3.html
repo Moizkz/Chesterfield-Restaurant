@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Chesterfield - 7 Pages</title>
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="animation.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<script src="Script.js"></script>
+<script src="animation.js"></script>
+<body>
+<header>
+<div class="logo">THE<br>CHESTERFIELD<small>KITCHEN & BAR</small></div>
+<div class="hamburger" id="hamburger">☰</div>
+<nav id="mainNav">
+<a class="active" onclick="showPage('home',this)">Home</a>
+<a onclick="showPage('about',this)">About</a>
+<a onclick="showPage('menu',this)">Menu</a>
+<a onclick="showPage('reservations',this)">Reservations</a>
+<a onclick="showPage('private',this)">Private Dining</a>
+<a onclick="showPage('gallery',this)">Gallery</a>
+<a onclick="showPage('contact',this)">Contact</a>
+<button class="btn-gold" onclick="showPage('reservations',null)">Book a Table</button>
+</nav>
+</header>
+
+<!-- HOME = HERO + ALL OTHER PAGES EXACT SAME AS ORIGINAL -->
+<section class="page active" id="page-home">
+<!-- HERO - ORIGINAL -->
+<div class="hero">
+<div class="hero-text">
+<h4>Modern British Cuisine</h4>
+<h1>Good food.<br>Great times.<br><i>Made for sharing.</i></h1>
+<p>Welcome to The Chesterfield, a modern British restaurant in the heart of the UK. Seasonal ingredients, expertly crafted dishes and warm hospitality.</p>
+<div style="display:flex;gap:12px;margin-top:20px">
+<button class="btn-gold" onclick="showPage('reservations',null)">Book a Table →</button>
+<button class="btn-outline" onclick="showPage('menu',null)">View Our Menu</button>
+</div>
+<div class="hero-icons">
+<div><span>🍃</span>SEASONAL<br>INGREDIENTS</div>
+<div><span>🍷</span>CAREFULLY<br>CURATED WINES</div>
+<div><span>👥</span>WARM<br>HOSPITALITY</div>
+</div>
+</div>
+<div class="hero-img"><img src="https://images.unsplash.com/photo-1546964053-d93311cf64e4?w=800"></div>
+</div>
+<div class="bottom-bar"><div>📍 56 King Street, Manchester, M2 4WU</div><div>🕒 Mon - Thu 12pm - 10pm • Fri - Sun 12pm - 11pm</div><div>📞 0161 839 0640 • IG FB</div></div>
+
+<!-- ABOUT - SAME AS ORIGINAL ABOUT PAGE -->
+<div class="section" style="background:#111">
+<span class="sub">Our Story</span>
+<h2>Rooted in Manchester</h2>
+<div class="grid-2">
+<div>
+<h3>Founded in 2018</h3>
+<p style="margin:16px 0;opacity:.8">In the heart of Manchester, The Chesterfield was born from a passion for modern British cooking, warm hospitality, and bringing people together over good food and drink.</p>
+<p style="opacity:.7">What began as a small neighbourhood bistro has grown into a destination for timeless dishes, seasonal flavours, and unforgettable evenings.</p>
+<div style="margin-top:20px;display:grid;gap:12px">
+<div style="border:1px solid rgba(212,183,143,.15);padding:12px">🍃 <strong>Seasonal Ingredients</strong><br><small>Fresh, local produce sourced daily from trusted farms across the UK.</small></div>
+<div style="border:1px solid rgba(212,183,143,.15);padding:12px">🌾 <strong>Locally Sourced</strong><br><small>Supporting local suppliers for sustainable, high-quality ingredients.</small></div>
+</div>
+</div>
+<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600" style="width:100%;height:420px;object-fit:cover;border-radius:4px">
+</div>
+<h3 style="text-align:center;margin-top:60px">Meet Our Team</h3>
+<div class="testimonials">
+<div class="test-card"><strong>Emma</strong><br><small>Head Sommelier - Expert in British & European wines</small></div>
+<div class="test-card"><strong>James</strong><br><small>Restaurant Manager - Ensuring warm hospitality every service</small></div>
+<div class="test-card"><strong>Olivia</strong><br><small>Pastry Chef - Crafting desserts with seasonal flair</small></div>
+</div>
+</div>
+
+<!-- MENU - SAME AS ORIGINAL MENU PAGE -->
+<div class="section">
+<span class="sub">What we serve</span>
+<h2>Our Menu</h2>
+<div class="menu-tabs" id="homeTabs">
+<div class="tab active" onclick="filterMenu('all',this,'homeMenuGrid','homeTabs')">All</div>
+<div class="tab" onclick="filterMenu('Mains',this,'homeMenuGrid','homeTabs')">Mains</div>
+<div class="tab" onclick="filterMenu('Starters',this,'homeMenuGrid','homeTabs')">Starters</div>
+<div class="tab" onclick="filterMenu('Desserts',this,'homeMenuGrid','homeTabs')">Desserts</div>
+<div class="tab" onclick="filterMenu('Wine',this,'homeMenuGrid','homeTabs')">Wines</div>
+</div>
+<div class="products" id="homeMenuGrid"></div>
+</div>
+
+<!-- RESERVATIONS - SAME AS ORIGINAL RESERVATIONS PAGE -->
+<div class="section" style="background:#111">
+<span class="sub">Reserve your table</span>
+<h2>Book a Table</h2>
+<div class="form-box">
+<div class="form-grid">
+<input type="date" id="homeResDate"><input type="time" id="homeResTime">
+<select id="homeResGuests"><option>2 Guests</option><option>4 Guests</option><option>6 Guests</option><option>8+ Guests</option></select>
+<select id="homeResOccasion"><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Casual</option></select>
+</div>
+<input type="text" id="homeResName" placeholder="Full Name">
+<input type="email" id="homeResEmail" placeholder="Email">
+<input type="tel" id="homeResPhone" placeholder="Phone">
+<textarea id="homeResNotes" rows="3" placeholder="Special requests"></textarea>
+<button class="btn-gold" style="width:100%;margin-top:12px" onclick="submitReservation('home')">Confirm Reservation →</button>
+<p style="font-size:11px;margin-top:10px;opacity:.6">Mon-Thu 12pm-10pm • Fri-Sun 12pm-11pm • 0161 839 0640</p>
+<div id="homeResList" style="margin-top:20px;font-size:12px"></div>
+</div>
+</div>
+
+<!-- PRIVATE DINING - SAME AS ORIGINAL -->
+<div class="section">
+<span class="sub">Exclusive Events</span>
+<h2>Private Dining</h2>
+<div class="grid-2">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" style="width:100%;height:420px;object-fit:cover">
+<div>
+<h3>Celebrate in Style</h3>
+<p style="margin:14px 0;opacity:.8">Host your next event in our elegant private dining room. From corporate dinners to birthdays and weddings, we cater for 20-80 guests with bespoke menus.</p>
+<ul style="opacity:.8;font-size:14px;margin-left:18px">
+<li>Capacity 20-80 guests</li><li>Bespoke British menus</li><li>Dedicated sommelier</li><li>AV & private bar</li>
+</ul>
+<div class="form-box" style="margin-top:20px">
+<input id="homePrivName" placeholder="Your Name"><input id="homePrivEmail" placeholder="Email">
+<input id="homePrivGuests" type="number" placeholder="Number of Guests"><textarea id="homePrivMsg" placeholder="Tell us about your event"></textarea>
+<button class="btn-gold" style="width:100%" onclick="toast('Private dining enquiry sent!')">Enquire Now</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- GALLERY - SAME AS ORIGINAL -->
+<div class="section" style="background:#111">
+<span class="sub">Inside The Chesterfield</span>
+<h2>Gallery</h2>
+<div class="gallery" id="homeGalleryGrid"></div>
+</div>
+
+<!-- CONTACT - SAME AS ORIGINAL -->
+<div class="section">
+<span class="sub">Find Us</span>
+<h2>Contact</h2>
+<div class="grid-2">
+<div>
+<p>📍 56 King Street, Manchester, M2 4WU<br>📞 0161 839 0640<br>✉️ hello@chesterfield.co.uk</p>
+<p style="margin:18px 0">Mon-Thu 12pm-10pm<br>Fri-Sun 12pm-11pm</p>
+<div class="form-box">
+<input id="homeCName" placeholder="Name"><input id="homeCEmail" placeholder="Email">
+<textarea id="homeCMsg" rows="4" placeholder="Message"></textarea>
+<button class="btn-gold" style="width:100%" onclick="toast('Message sent!')">Send Message</button>
+</div>
+</div>
+<iframe src="https://maps.google.com/maps?q=56%20King%20Street%20Manchester&t=&z=14&ie=UTF8&iwloc=&output=embed" style="width:100%;height:420px;border:0;border-radius:4px;filter:grayscale(1) invert(1)"></iframe>
+</div>
+</div>
+</section>
+
+<!-- PAGE 2 ABOUT - UNTOUCHED ORIGINAL -->
+<section class="page" id="page-about">
+<div class="section">
+<span class="sub">Our Story</span>
+<h2>Rooted in Manchester</h2>
+<div class="grid-2">
+<div>
+<h3>Founded in 2018</h3>
+<p style="margin:16px 0;opacity:.8">In the heart of Manchester, The Chesterfield was born from a passion for modern British cooking, warm hospitality, and bringing people together over good food and drink.</p>
+<p style="opacity:.7">What began as a small neighbourhood bistro has grown into a destination for timeless dishes, seasonal flavours, and unforgettable evenings.</p>
+<div style="margin-top:20px;display:grid;gap:12px">
+<div style="border:1px solid rgba(212,183,143,.15);padding:12px">🍃 <strong>Seasonal Ingredients</strong><br><small>Fresh, local produce sourced daily from trusted farms across the UK.</small></div>
+<div style="border:1px solid rgba(212,183,143,.15);padding:12px">🌾 <strong>Locally Sourced</strong><br><small>Supporting local suppliers for sustainable, high-quality ingredients.</small></div>
+</div>
+</div>
+<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600" style="width:100%;height:420px;object-fit:cover;border-radius:4px">
+</div>
+<h3 style="text-align:center;margin-top:60px">Meet Our Team</h3>
+<div class="testimonials">
+<div class="test-card"><strong>Emma</strong><br><small>Head Sommelier - Expert in British & European wines</small></div>
+<div class="test-card"><strong>James</strong><br><small>Restaurant Manager - Ensuring warm hospitality every service</small></div>
+<div class="test-card"><strong>Olivia</strong><br><small>Pastry Chef - Crafting desserts with seasonal flair</small></div>
+</div>
+</div>
+</section>
+
+<!-- PAGE 3 MENU - UNTOUCHED ORIGINAL -->
+<section class="page" id="page-menu">
+<div class="section">
+<span class="sub">What we serve</span>
+<h2>Our Menu</h2>
+<div class="menu-tabs" id="menuTabs">
+<div class="tab active" onclick="filterMenu('all',this,'menuGrid','menuTabs')">All</div>
+<div class="tab" onclick="filterMenu('Mains',this,'menuGrid','menuTabs')">Mains</div>
+<div class="tab" onclick="filterMenu('Starters',this,'menuGrid','menuTabs')">Starters</div>
+<div class="tab" onclick="filterMenu('Desserts',this,'menuGrid','menuTabs')">Desserts</div>
+<div class="tab" onclick="filterMenu('Wine',this,'menuGrid','menuTabs')">Wines</div>
+</div>
+<div class="products" id="menuGrid"></div>
+</div>
+</section>
+
+<!-- PAGE 4 RESERVATIONS - UNTOUCHED ORIGINAL -->
+<section class="page" id="page-reservations">
+<div class="section">
+<span class="sub">Reserve your table</span>
+<h2>Book a Table</h2>
+<div class="form-box">
+<div class="form-grid">
+<input type="date" id="resDate"><input type="time" id="resTime">
+<select id="resGuests"><option>2 Guests</option><option>4 Guests</option><option>6 Guests</option><option>8+ Guests</option></select>
+<select id="resOccasion"><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Casual</option></select>
+</div>
+<input type="text" id="resName" placeholder="Full Name">
+<input type="email" id="resEmail" placeholder="Email">
+<input type="tel" id="resPhone" placeholder="Phone">
+<textarea id="resNotes" rows="3" placeholder="Special requests"></textarea>
+<button class="btn-gold" style="width:100%;margin-top:12px" onclick="submitReservation('main')">Confirm Reservation →</button>
+<p style="font-size:11px;margin-top:10px;opacity:.6">Mon-Thu 12pm-10pm • Fri-Sun 12pm-11pm • 0161 839 0640</p>
+<div id="resList" style="margin-top:20px;font-size:12px"></div>
+</div>
+</div>
+</section>
+
+<!-- PAGE 5 PRIVATE DINING - UNTOUCHED -->
+<section class="page" id="page-private">
+<div class="section">
+<span class="sub">Exclusive Events</span>
+<h2>Private Dining</h2>
+<div class="grid-2">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" style="width:100%;height:420px;object-fit:cover">
+<div>
+<h3>Celebrate in Style</h3>
+<p style="margin:14px 0;opacity:.8">Host your next event in our elegant private dining room. From corporate dinners to birthdays and weddings, we cater for 20-80 guests with bespoke menus.</p>
+<ul style="opacity:.8;font-size:14px;margin-left:18px">
+<li>Capacity 20-80 guests</li><li>Bespoke British menus</li><li>Dedicated sommelier</li><li>AV & private bar</li>
+</ul>
+<div class="form-box" style="margin-top:20px">
+<input id="privName" placeholder="Your Name"><input id="privEmail" placeholder="Email">
+<input id="privGuests" type="number" placeholder="Number of Guests"><textarea id="privMsg" placeholder="Tell us about your event"></textarea>
+<button class="btn-gold" style="width:100%" onclick="toast('Private dining enquiry sent!')">Enquire Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PAGE 6 GALLERY - UNTOUCHED -->
+<section class="page" id="page-gallery">
+<div class="section">
+<span class="sub">Inside The Chesterfield</span>
+<h2>Gallery</h2>
+<div class="gallery" id="galleryGrid"></div>
+</div>
+</section>
+
+<!-- PAGE 7 CONTACT - UNTOUCHED -->
+<section class="page" id="page-contact">
+<div class="section">
+<span class="sub">Find Us</span>
+<h2>Contact</h2>
+<div class="grid-2">
+<div>
+<p>📍 56 King Street, Manchester, M2 4WU<br>📞 0161 839 0640<br>✉️ hello@chesterfield.co.uk</p>
+<p style="margin:18px 0">Mon-Thu 12pm-10pm<br>Fri-Sun 12pm-11pm</p>
+<div class="form-box">
+<input id="cName" placeholder="Name"><input id="cEmail" placeholder="Email">
+<textarea id="cMsg" rows="4" placeholder="Message"></textarea>
+<button class="btn-gold" style="width:100%" onclick="toast('Message sent to Chesterfield!')">Send Message</button>
+</div>
+</div>
+<iframe src="https://maps.google.com/maps?q=56%20King%20Street%20Manchester&t=&z=14&ie=UTF8&iwloc=&output=embed" style="width:100%;height:420px;border:0;border-radius:4px;filter:grayscale(1) invert(1)"></iframe>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div><strong>THE CHESTERFIELD</strong><br><small>Modern British Cuisine<br>Seasonal ingredients, expertly crafted dishes</small></div>
+<div><strong>Hours</strong><br>Mon-Thu 12pm-10pm<br>Fri-Sun 12pm-11pm</div>
+<div><strong>Book</strong><br><button class="btn-gold" onclick="showPage('reservations',null)">Book a Table</button><br><small style="opacity:.6" id="totalBooks">Bookings: 0 | Visitors: <span id="visCount">1,248</span></small></div>
+</div>
+<div class="copy">@ 2025 The Chesterfield Kitchen & Bar • Coded by MOIZ KZ • University Project • 7 Pages • LocalStorage + Validation + Filter + Lightbox</div>
+</footer>
+
+<div class="modal" id="imgModal" onclick="this.classList.remove('active')"><div style="background:#111;border:1px solid var(--gold);padding:4px;border-radius:6px;max-width:90%"><img id="lightImg" src="" style="width:100%;max-width:700px"></div></div>
+<div class="toast" id="toast"></div>
+
+</body>
+</html>
