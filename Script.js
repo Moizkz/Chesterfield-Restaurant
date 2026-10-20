@@ -37,6 +37,11 @@ if(cat==='all') renderMenu(menuData, gridId); else renderMenu(menuData.filter(m=
 function renderGallery(gridId){
 document.getElementById(gridId).innerHTML=galleryData.map(g=>`<img src="${g}" loading="lazy" onclick="openLight('${g}')">`).join('');
 }
+document.addEventListener('DOMContentLoaded',function(){
+    renderGallery('galleryGrid');
+    renderGallery('homeGalleryGrid');
+});
+
 function openLight(src){document.getElementById('lightImg').src=src;document.getElementById('imgModal').classList.add('active')}
 function toast(msg){let t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
 function submitReservation(type){
