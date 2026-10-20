@@ -7,7 +7,7 @@ const menuData=[
 {id:6,name:"Chesterfield Wine Selection",price:45,cat:"Wine",img:"images/menu6.jpg"},
 ];
 const galleryData=[
-"images/gal1.jpg",
+"images/dinning.jpg",
 "images/gal2.jpg",
 "images/gal3.jpg",
 "images/gal4.jpg",
